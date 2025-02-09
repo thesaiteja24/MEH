@@ -13,7 +13,8 @@ const seedAccessories = async () => {
     await Accessory.deleteMany(); // Clear old data
     console.log("🗑️ Accessories data deleted.");
 
-    await Accessory.insertMany(accessoriesData);
+    await Accessory.create(accessoriesData);
+
     console.log("✅ Accessories data inserted successfully!");
 
     mongoose.connection.close();
